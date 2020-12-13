@@ -45,7 +45,7 @@ public class MainController implements ActionListener {
         }
         
         }
-        else if (e.getActionCommand().equals("Join Us Now")) {
+        else if (e.getActionCommand().equals("Sign up")) {
             new Register();
                 this.mWindow.dispose();
         }
