@@ -3,17 +3,19 @@ package main.views;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
+import javax.swing.ButtonGroup;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JRadioButton;
 import javax.swing.JTextField;
 
 
 public class Register extends JFrame {
-    JComboBox dropDown;
+ 
     
     public Register (){
        
@@ -24,8 +26,12 @@ public class Register extends JFrame {
         JPanel panelBotton = new JPanel();
         JPanel panelCenter = new JPanel();
         JLabel myHeader = new JLabel("BARBER");
-        String [] dropList = { "Register As:", "Customer" , "Partner" };
-        dropDown = new JComboBox(dropList);
+       JRadioButton youAreB = new JRadioButton("Barber");
+         JRadioButton youAreC = new JRadioButton("costumer");
+         ButtonGroup groupBC = new ButtonGroup();
+         groupBC.add(youAreC);
+         groupBC.add(youAreB);
+        JLabel youAre = new JLabel("Select:");
         JLabel fullName = new JLabel("Full Name:");
         JLabel mobileNumber = new JLabel("Mobile Number:");
         JTextField nameField = new JTextField(25);
@@ -63,7 +69,10 @@ public class Register extends JFrame {
 
         panelTop.add(myHeader);
         
-        panelLeft.add(dropDown);
+         panelLeft.add(youAre);
+        panelLeft.add(youAreC);
+        panelLeft.add(youAreB);
+        
         panelCenter.add(fullName);
         panelCenter.add(nameField);
         panelCenter.add(mobileNumber);
