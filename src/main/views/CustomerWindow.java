@@ -4,6 +4,7 @@ package main.views;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
+import javax.swing.ButtonGroup;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
@@ -12,6 +13,7 @@ import javax.swing.JLabel;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JPanel;
+import javax.swing.JRadioButton;
 import javax.swing.JTextField;
 
 
@@ -32,8 +34,12 @@ public class CustomerWindow extends JFrame {
         JMenu appointmentMenu = new JMenu("My Appointments");
         JMenu reviewMenu = new JMenu("Reviews");
         JMenu logOutMenu = new JMenu("Log Out");
-        String [] dropList = { "Search by:", "Name" , "Location" };
-        dropDownC = new JComboBox(dropList);
+        JRadioButton search1 = new JRadioButton("Barber");
+        JRadioButton search2 = new JRadioButton("Location");
+        ButtonGroup groupBC = new ButtonGroup();
+        groupBC.add(search1);
+        groupBC.add(search2);
+        JLabel search = new JLabel("Search by:");
         JLabel SearchName = new JLabel("Welcome Username");
         JTextField SearchField = new JTextField(25);
         JButton SearchButton = new JButton("Search");
@@ -68,8 +74,10 @@ public class CustomerWindow extends JFrame {
         this.setIconImage(image.getImage());
 
         panelTop.add(myHeader);
+         panelLeft.add(search);
+        panelLeft.add(search1);
+        panelLeft.add(search2);
         panelCenter.add(menuBar);
-        panelLeft.add(dropDownC);
         panelCenter.add(SearchName);
         panelCenter.add(SearchField);
         panelCenter.add(SearchButton);
